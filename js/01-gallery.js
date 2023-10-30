@@ -5,17 +5,6 @@ import { galleryItems } from './gallery-items.js';
 const list=document.querySelector(".gallery");
 
 list.insertAdjacentHTML("beforeend", createMarcup(galleryItems))
-list.addEventListener("click", handleClick)
- 
-function handleClick(event){
-    event.preventDefault();
-    if (event.target === event.currentTarget)
-{
-    return;
-}
-const currentList= event.target.closest(".gallery__link");
-console.log(currentList)
-}
 
 function createMarcup(arr){
     return arr.map(({preview, original, description})=>
